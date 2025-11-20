@@ -12,7 +12,7 @@ const Navbar = ({ user }) => {
     return (
         <nav>
             <div className="nav-container">
-                <Link to="/" className="nav-brand">InstaClone</Link>
+                <Link to="/" className="nav-brand">ScriptFlow</Link>
                 <div className="nav-links">
                     {user ? (
                         <>
