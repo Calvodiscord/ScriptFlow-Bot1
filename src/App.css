@@ -1,22 +1,32 @@
-body {
-    background-color: #fafafa;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-      sans-serif;
-    margin: 0;
-    padding-top: 70px; /* Espaço para a navbar fixa */
+/* frontend/src/App.css - VERSÃO MELHORADA */
+
+:root {
+    --border-color: #dbdbdb;
+    --background-color: #fafafa;
+    --primary-text-color: #262626;
+    --primary-button-color: #0095f6;
+    --primary-button-hover-color: #0077c2;
+    --danger-color: #ed4956;
 }
 
+body {
+    background-color: var(--background-color);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    margin: 0;
+    padding-top: 84px; /* Espaço para a navbar fixa */
+}
+
+/* --- Layout Principal --- */
 .container {
     max-width: 935px;
     margin: 20px auto;
     padding: 0 20px;
 }
 
-/* Navbar */
+/* --- Barra de Navegação --- */
 nav {
     background-color: #fff;
-    border-bottom: 1px solid #dbdbdb;
+    border-bottom: 1px solid var(--border-color);
     position: fixed;
     top: 0;
     width: 100%;
@@ -35,78 +45,100 @@ nav {
 }
 
 .nav-brand {
-    font-size: 1.5rem;
-    font-weight: bold;
+    font-family: 'Grand Hotel', cursive; /* Adicione <link href="https://fonts.googleapis.com/css2?family=Grand+Hotel&display=swap" rel="stylesheet"> no seu index.html para a fonte do Insta */
+    font-size: 2rem;
     text-decoration: none;
-    color: #262626;
+    color: var(--primary-text-color);
 }
 
 .nav-links a, .nav-links button {
-    margin-left: 20px;
+    margin-left: 22px;
     text-decoration: none;
-    color: #262626;
+    color: var(--primary-text-color);
     background: none;
     border: none;
     cursor: pointer;
     font-size: 1rem;
+    font-weight: 600;
 }
 
-.nav-links button {
-    font-weight: bold;
-    color: #0095f6;
+.nav-links .logout-button {
+    color: var(--primary-button-color);
 }
 
-/* Formulários */
-.form-container {
+/* --- Cards (Formulários, Posts, etc) --- */
+.card {
     background-color: #fff;
-    border: 1px solid #dbdbdb;
-    padding: 40px;
-    max-width: 350px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
     margin: 40px auto;
+    max-width: 400px;
+}
+
+.card-content {
+    padding: 30px 40px;
     text-align: center;
 }
 
-.form-container h2 {
-    margin-bottom: 20px;
+.card-content h2 {
+    margin: 0 0 20px 0;
+    font-size: 1.8rem;
+    color: var(--primary-text-color);
 }
 
-.form-container input {
+.card-content input {
     width: 100%;
-    padding: 10px;
+    padding: 12px;
     margin-bottom: 10px;
-    border: 1px solid #dbdbdb;
+    border: 1px solid var(--border-color);
     border-radius: 3px;
     box-sizing: border-box;
+    background-color: var(--background-color);
 }
 
-.form-container button {
+.card-content button {
     width: 100%;
     padding: 10px;
-    background-color: #0095f6;
+    background-color: var(--primary-button-color);
     color: white;
     border: none;
-    border-radius: 3px;
+    border-radius: 8px;
     font-weight: bold;
     cursor: pointer;
+    margin-top: 10px;
+    font-size: 1rem;
 }
 
-.form-container button:hover {
-    background-color: #0077c2;
+.card-content button:hover {
+    background-color: var(--primary-button-hover-color);
 }
 
-/* Tabela do Admin */
-table {
+.card-content button:disabled {
+    background-color: #b2dffc;
+    cursor: not-allowed;
+}
+
+/* --- Posts no Feed --- */
+.post-card {
+    background-color: #fff;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    margin-bottom: 20px;
+    max-width: 614px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.post-header {
+    padding: 14px 16px;
+    font-weight: 600;
+}
+
+.post-image {
     width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
+    height: auto;
 }
 
-th, td {
-    border: 1px solid #dbdbdb;
-    padding: 8px;
-    text-align: left;
+.post-content {
+    padding: 10px 16px;
 }
-
-th {
-    background-color: #f2f2f2;
-  }
