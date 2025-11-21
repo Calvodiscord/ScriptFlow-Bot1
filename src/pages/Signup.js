@@ -22,14 +22,16 @@ const Signup = () => {
     };
 
     return (
-        <div className="form-container">
-            <h2>Cadastre-se</h2>
-            <form onSubmit={onSubmit}>
-                <input type="text" name="username" placeholder="Nome de usuário" onChange={onChange} required />
-                <input type="email" name="email" placeholder="Email" onChange={onChange} required />
-                <input type="password" name="password" placeholder="Senha (mínimo 6 caracteres)" minLength="6" onChange={onChange} required />
-                <button type="submit">Cadastrar</button>
-            </form>
+        <div className="card">
+            <div className="card-content">
+                <h2>Cadastre-se</h2>
+                <form onSubmit={onSubmit}>
+                    <input type="text" name="username" placeholder="Nome de usuário" onChange={onChange} required />
+                    <input type="email" name="email" placeholder="Email" onChange={onChange} required />
+                    <input type="password" name="password" placeholder="Senha (mínimo 6 caracteres)" minLength="6" onChange={onChange} required />
+                    <button type="submit">Cadastrar</button>
+                </form>
+            </div>
         </div>
     );
 };
