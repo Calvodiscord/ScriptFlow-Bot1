@@ -10,6 +10,7 @@ import Login from './pages/Login';
 import Signup from './pages/Signup';
 import AdminPanel from './pages/AdminPanel';
 import CreatePost from './pages/CreatePost';
+import Profile from './pages/Profile'; // Importe a nova página de perfil
 
 const App = () => {
     const token = localStorage.getItem('token');
@@ -38,8 +39,13 @@ const App = () => {
                 <Routes>
                     <Route path="/login" element={user ? <Navigate to="/" /> : <Login />} />
                     <Route path="/signup" element={user ? <Navigate to="/" /> : <Signup />} />
+                    
+                    {/* Rotas Protegidas */}
                     <Route path="/" element={user ? <Home /> : <Navigate to="/login" />} />
                     <Route path="/create-post" element={user ? <CreatePost /> : <Navigate to="/login" />} />
+                    <Route path="/profile" element={user ? <Profile /> : <Navigate to="/login" />} /> {/* Rota adicionada */}
+                    
+                    {/* Rota de Admin */}
                     <Route path="/admin" element={isAdmin ? <AdminPanel /> : <Navigate to="/" />} />
                 </Routes>
             </div>
