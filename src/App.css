@@ -1,4 +1,4 @@
-/* frontend/src/App.css - VERSÃO MELHORADA */
+/* frontend/src/App.css - VERSÃO COMPLETA E ELEGANTE */
 
 :root {
     --border-color: #dbdbdb;
@@ -45,8 +45,8 @@ nav {
 }
 
 .nav-brand {
-    font-family: 'Grand Hotel', cursive; /* Adicione <link href="https://fonts.googleapis.com/css2?family=Grand+Hotel&display=swap" rel="stylesheet"> no seu index.html para a fonte do Insta */
-    font-size: 2rem;
+    font-size: 1.8rem;
+    font-weight: bold;
     text-decoration: none;
     color: var(--primary-text-color);
 }
