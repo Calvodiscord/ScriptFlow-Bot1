@@ -1,8 +1,6 @@
-// frontend/src/pages/Profile.js - VERSÃO CORRIGIDA
-
 import React from 'react';
 import { Link } from 'react-router-dom';
-import jwtDecode from 'jwt-decode'; // Esta linha provavelmente estava faltando
+import jwtDecode from 'jwt-decode'; // Esta importação estava faltando
 
 const Profile = () => {
     // Decodifica o token para pegar os dados do usuário logado
@@ -10,7 +8,14 @@ const Profile = () => {
     
     // Verifica se o token existe antes de tentar decodificar
     if (!token) {
-        return <div>Você precisa estar logado para ver o perfil.</div>;
+        return (
+            <div className="card">
+                <div className="card-content">
+                    <h2>Erro</h2>
+                    <p>Você precisa estar logado para ver esta página.</p>
+                </div>
+            </div>
+        );
     }
 
     const user = jwtDecode(token).user;
@@ -19,7 +24,7 @@ const Profile = () => {
         <div className="card">
             <div className="card-content">
                 <h2>{user.username}</h2>
-                <p>Em breve, aqui você verá seus posts e informações.</p>
+                <p>Em breve, aqui você verá seus posts e informações de perfil.</p>
 
                 {/* A engrenagem de Admin só aparece se o usuário for admin */}
                 {user.isAdmin && (
@@ -34,4 +39,4 @@ const Profile = () => {
     );
 };
 
-export default Profile;
+export default Profile;export default Profile;
