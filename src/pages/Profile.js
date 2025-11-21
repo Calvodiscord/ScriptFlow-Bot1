@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import jwtDecode from 'jwt-decode'; // Esta importação estava faltando
+import jwtDecode from 'jwt-decode';
 
 const Profile = () => {
     // Decodifica o token para pegar os dados do usuário logado
@@ -39,4 +39,4 @@ const Profile = () => {
     );
 };
 
-export default Profile;export default Profile;
+export default Profile; // Apenas UMA linha de export no final
