@@ -1,5 +1,3 @@
-// frontend/src/components/Navbar.js - VERSÃO FINAL
-
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 
@@ -9,7 +7,7 @@ const Navbar = ({ user }) => {
     const handleLogout = () => {
         localStorage.removeItem('token');
         navigate('/login');
-        window.location.reload(); // Correção do botão sair
+        window.location.reload(); // Correção para o botão sair funcionar corretamente
     };
 
     return (
