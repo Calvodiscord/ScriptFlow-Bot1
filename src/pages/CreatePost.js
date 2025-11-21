@@ -32,15 +32,17 @@ const CreatePost = () => {
     };
 
     return (
-        <div className="form-container">
-            <h2>Criar Novo Post</h2>
-            <form onSubmit={handleSubmit}>
-                <input type="file" accept="image/*" onChange={(e) => setFile(e.target.files[0])} required />
-                <input type="text" placeholder="Escreva uma legenda..." value={caption} onChange={(e) => setCaption(e.target.value)} />
-                <button type="submit" disabled={loading}>
-                    {loading ? 'Publicando...' : 'Publicar'}
-                </button>
-            </form>
+        <div className="card">
+            <div className="card-content">
+                <h2>Criar Novo Post</h2>
+                <form onSubmit={handleSubmit}>
+                    <input type="file" accept="image/*" onChange={(e) => setFile(e.target.files[0])} required />
+                    <input type="text" placeholder="Escreva uma legenda..." value={caption} onChange={(e) => setCaption(e.target.value)} />
+                    <button type="submit" disabled={loading}>
+                        {loading ? 'Publicando...' : 'Publicar'}
+                    </button>
+                </form>
+            </div>
         </div>
     );
 };
