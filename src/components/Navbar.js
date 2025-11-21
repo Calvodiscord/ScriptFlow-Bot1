@@ -1,3 +1,5 @@
+// frontend/src/components/Navbar.js - VERSÃO FINAL
+
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 
@@ -7,6 +9,7 @@ const Navbar = ({ user }) => {
     const handleLogout = () => {
         localStorage.removeItem('token');
         navigate('/login');
+        window.location.reload(); // Correção do botão sair
     };
 
     return (
@@ -18,8 +21,9 @@ const Navbar = ({ user }) => {
                         <>
                             <Link to="/">Feed</Link>
                             <Link to="/create-post">Novo Post</Link>
-                            {user.isAdmin && <Link to="/admin">Admin</Link>}
-                            <button onClick={handleLogout}>Sair</button>
+                            {/* Novo link para o perfil do usuário */}
+                            <Link to="/profile">Perfil</Link>
+                            <button onClick={handleLogout} className="logout-button">Sair</button>
                         </>
                     ) : (
                         <>
